@@ -1,0 +1,163 @@
+$logo_font: 'logo', -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$body_font: -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$darkpurple: #141A2E;
+$purple: #6666FF;
+$pink: #FC297D;
+$gradient: linear-gradient(to bottom right, $pink, $purple);
+$white: #FFFFFF;
+@mixin webfont {
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering         : optimizeLegibility;
+}
+@font-face {
+	font-family: 'logo';
+	src        : url("assets/logo.woff2") format('woff2'), url("assets/logo.woff") format('woff');
+	font-weight: 900;
+	font-style : normal;
+}
+
+html {
+	@include webfont;
+	background: $darkpurple;
+	height    : 100%;
+	font-size : 14px;
+}
+
+body {
+	@include webfont;
+	height     : 100%;
+	background : $darkpurple;
+	color      : $white;
+	font-family: $body_font;
+	font-size  : 1rem;
+	font-weight: 400;
+	line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+::selection {
+	background: $pink;
+	color     : $white;
+}
+
+span {
+	@include webfont;
+	font-family: $logo_font;
+}
+
+p {
+	@include webfont;
+	font-family: $body_font;
+	font-weight: 500;
+	font-size  : 1rem;
+	color      : $white;
+}
+
+a {
+	@include webfont;
+	color          : $pink;
+	text-decoration: none;
+
+	&:link {
+		color          : $pink;
+		text-decoration: none;
+	}
+
+	&:visited {
+		color          : $pink;
+		text-decoration: none;
+	}
+
+	&:hover {
+		color          : $purple;
+		text-decoration: none;
+		transition     : 0.4s;
+	}
+
+	&:focus {
+		color          : $purple;
+		text-decoration: none;
+		transition     : 0.4s;
+	}
+
+	&:active {
+		color          : $purple;
+		text-decoration: none;
+		transition     : 0.4s;
+	}
+}
+
+.standard {
+	display    : flex;
+	align-items: center;
+	margin     : 0 auto;
+	height     : auto;
+	min-height : 100% !important;
+	background : $darkpurple;
+}
+
+.footer {
+	display    : flex;
+	align-items: center;
+	margin     : 0 auto;
+	height     : auto;
+	background : $darkpurple;
+	padding    : 50px 0;
+}
+
+.row {
+	width     : auto;
+	max-width : 1280px;
+	margin    : 0 auto;
+	text-align: center;
+}
+
+.rendered-logo {
+	vertical-align: middle;
+	text-align    : left;
+}
+
+.logo {
+	@include webfont;
+	font-family: $logo_font;
+	font-size  : 3rem;
+	color      : $white;
+	position   : relative;
+	z-index    : 2;
+	text-shadow: -1px 0 $darkpurple, 0 1px $darkpurple, 1px 0 $darkpurple, 0 -1px $darkpurple;
+}
+
+.shadow {
+	@include webfont;
+	font-family            : $logo_font;
+	font-size              : 3rem;
+	color                  : $pink;
+	position               : absolute;
+	top                    : 3px;
+	left                   : 18px;
+	z-index                : 1;
+	user-select            : none;
+	background             : $gradient;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+@media (max-width: 991px) {
+	.logo,
+	.shadow {
+		font-size: 2em;
+	}
+
+	.standard {
+		padding: 50px 12%;
+	}
+}
