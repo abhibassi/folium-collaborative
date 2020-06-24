@@ -5,11 +5,6 @@ $purple: #6666FF;
 $pink: #FC297D;
 $gradient: linear-gradient(to bottom right, $pink, $purple);
 $white: #FFFFFF;
-@mixin webfont {
-	-webkit-font-smoothing : antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering         : optimizeLegibility;
-}
 @font-face {
 	font-family: 'logo';
 	src        : url("assets/logo.woff2") format('woff2'), url("assets/logo.woff") format('woff');
@@ -18,20 +13,21 @@ $white: #FFFFFF;
 }
 
 html {
-	@include webfont;
-	background: $darkpurple;
-	height    : 100%;
-	font-size : 14px;
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background             : $darkpurple;
+	font-size              : 14px;
+	height                 : 100%;
+	text-rendering         : optimizeLegibility;
 }
 
 body {
-	@include webfont;
-	height     : 100%;
 	background : $darkpurple;
 	color      : $white;
 	font-family: $body_font;
 	font-size  : 1rem;
 	font-weight: 400;
+	height     : 100%;
 	line-height: 1;
 }
 
@@ -51,20 +47,17 @@ p {
 }
 
 span {
-	@include webfont;
 	font-family: $logo_font;
 }
 
 p {
-	@include webfont;
+	color      : $white;
 	font-family: $body_font;
 	font-weight: 500;
 	font-size  : 1rem;
-	color      : $white;
 }
 
 a {
-	@include webfont;
 	color          : $pink;
 	text-decoration: none;
 
@@ -97,57 +90,47 @@ a {
 	}
 }
 
-.standard {
-	display    : flex;
-	align-items: center;
-	margin     : 0 auto;
-	height     : auto;
-	min-height : 100% !important;
-	background : $darkpurple;
+.hero {
+	align-items    : center;
+	background     : $darkpurple;
+	display        : flex;
+	justify-content: center;
+	min-height     : 100% !important;
 }
 
 .footer {
-	display    : flex;
-	align-items: center;
-	margin     : 0 auto;
-	height     : auto;
-	background : $darkpurple;
-	padding    : 50px 0;
-}
-
-.row {
-	width     : auto;
-	max-width : 1280px;
-	margin    : 0 auto;
-	text-align: center;
+	align-items    : center;
+	background     : $darkpurple;
+	display        : flex;
+	justify-content: center;
+	padding        : 50px 0;
 }
 
 .rendered-logo {
-	vertical-align: middle;
+	position      : relative;
 	text-align    : left;
+	vertical-align: middle;
 }
 
 .logo {
-	@include webfont;
+	color      : $white;
 	font-family: $logo_font;
 	font-size  : 3rem;
-	color      : $white;
 	position   : relative;
-	z-index    : 2;
 	text-shadow: -1px 0 $darkpurple, 0 1px $darkpurple, 1px 0 $darkpurple, 0 -1px $darkpurple;
+	z-index    : 2;
 }
 
 .shadow {
-	@include webfont;
+	background             : $gradient;
+	color                  : $pink;
 	font-family            : $logo_font;
 	font-size              : 3rem;
-	color                  : $pink;
+	left                   : 4px;
 	position               : absolute;
-	top                    : 3px;
-	left                   : 18px;
-	z-index                : 1;
+	top                    : 4px;
 	user-select            : none;
-	background             : $gradient;
+	z-index                : 1;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
