@@ -1,5 +1,5 @@
-$logo_font: 'logo', -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$body_font: -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$logo_font: 'logo', system-ui, -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$body_font: system-ui, -apple-system, BlinkMacSystemFont, 'SanFranciscoText', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $darkpurple: #141A2E;
 $purple: #6666FF;
 $pink: #FC297D;
@@ -7,7 +7,7 @@ $gradient: linear-gradient(to bottom right, $pink, $purple);
 $white: #FFFFFF;
 @font-face {
 	font-family: 'logo';
-	src        : url("assets/logo.woff2") format('woff2'), url("assets/logo.woff") format('woff');
+	src        : url("/font/logo.woff2") format('woff2'), url("/font/logo.woff") format('woff');
 	font-weight: 900;
 	font-style : normal;
 }
