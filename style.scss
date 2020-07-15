@@ -6,10 +6,11 @@ $pink: #FC297D;
 $gradient: linear-gradient(to bottom right, $pink, $purple);
 $white: #FFFFFF;
 @font-face {
-	font-family: 'logo';
-	src        : url("/font/logo.woff2") format('woff2'), url("/font/logo.woff") format('woff');
-	font-weight: 900;
-	font-style : normal;
+	font-display: swap;
+	font-family : 'logo';
+	src         : url("/font/logo.woff2") format('woff2'), url("/font/logo.woff") format('woff');
+	font-weight : 900;
+	font-style  : normal;
 }
 
 html {
